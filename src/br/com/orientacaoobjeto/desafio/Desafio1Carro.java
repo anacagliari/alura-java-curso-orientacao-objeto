@@ -1,4 +1,7 @@
-public class DesafioCarro {
+package br.com.orientacaoobjeto.desafio;
+
+// Crie uma classe Carro com atributos modelo, ano, cor e métodos para exibir a ficha técnica e calcular a idade do carro.
+public class Desafio1Carro {
     String modelo;
     int ano;
     String cor;
