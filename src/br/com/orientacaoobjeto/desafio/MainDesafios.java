@@ -1,5 +1,5 @@
 package br.com.orientacaoobjeto.desafio;
-public class Desafios {
+public class MainDesafios {
     public static void main(String[] args) {
 // desafios 1.
         // Crie uma classe Pessoa com um método que exibe "Olá, mundo!" no console.
@@ -151,5 +151,35 @@ public class Desafios {
 
         Desafio3NumerosPrimos numerosPrimos = new Desafio3NumerosPrimos();
         numerosPrimos.listarPrimos(50);
+
+// desafios 4.
+        // Crie uma classe ConversorMoeda que implementa uma interface ConversaoFinanceira com o método converterDolarParaReal() para converter 
+        // um valor em dólar para reais. A classe deve receber o valor em dólar como parâmetro.
+        Desafio4ConversorMoeda conversor = new Desafio4ConversorMoeda();
+        conversor.converterDolarParaReal(50);
+
+        // Crie uma classe CalculadoraSalaRetangular que implementa uma interface CalculoGeometrico com os métodos calcularArea() e calcularPerimetro() 
+        // para calcular a área e o perímetro de uma sala retangular. A classe deve receber altura e largura como parâmetros.
+        Desafio4CalculadoraSalaRetangular calculadora = new Desafio4CalculadoraSalaRetangular();
+        calculadora.calcularArea(3.5, 7.3); 
+        calculadora.calcularPerimetro(3.5, 7.3);
+
+        // Crie uma classe TabuadaMultiplicacao que implementa uma interface Tabuada com o método mostrarTabuada() para exibir a tabuada de um número. 
+        // A classe deve receber o número como parâmetro.
+        Desafio4TabuadaMultiplicacao tabuada = new Desafio4TabuadaMultiplicacao();
+        tabuada.mostrarTabuada(8); 
+        
+        // Crie uma interface ConversorTemperatura com os métodos celsiusParaFahrenheit() e fahrenheitParaCelsius(). Implemente uma classe 
+        // ConversorTemperaturaPadrao que implementa essa interface com as fórmulas de conversão e exibe os resultados.
+        DesafioConversorTemperaturaPadrao conversorTemperatura = new DesafioConversorTemperaturaPadrao();
+
+        double temperaturaCelsius = 22.5;
+        double temperaturaFahrenheit = conversorTemperatura.celsiusParaFahrenheit(temperaturaCelsius);
+        System.out.println(temperaturaCelsius + " Celsius é igual a " + temperaturaFahrenheit + " Fahrenheit.");
+
+        temperaturaFahrenheit = 63;
+        temperaturaCelsius = conversorTemperatura.fahrenheitParaCelsius(temperaturaFahrenheit);
+        System.out.println(temperaturaFahrenheit + " Fahrenheit é igual a " + temperaturaCelsius + " Celsius.");
+
     }
 }

@@ -1,4 +1,6 @@
 import br.com.orientacaoobjeto.calculo.CalculadoraDeTempo;
+import br.com.orientacaoobjeto.calculo.FiltroRecomendacao;
+import br.com.orientacaoobjeto.modelo.Episodio;
 import br.com.orientacaoobjeto.modelo.Filme;
 import br.com.orientacaoobjeto.modelo.Serie;
 
@@ -30,7 +32,7 @@ public class Main {
         filme2.setDuracaoEmMinutos(161);
         filme2.exibeFichaTecnica();
         filme2.avaliaFilme(7.6);
-        filme2.avaliaFilme(8.6);
+        filme2.avaliaFilme(5.6);
         System.out.println("Quantidade de avaliações: " + filme2.getTotalNotas());
         System.out.println("Nota: " + filme2.calculaMediaNotas());
 
@@ -107,7 +109,19 @@ public class Main {
         CalculadoraDeTempo calculadoraSerie = new CalculadoraDeTempo();
         calculadoraSerie.inclui(serie1);
 
-        System.out.println("Tempo total para maratonar os filmes do Harry Potter: " + calculadora.getTempoTotal() + " minutos.");
-        System.out.println("Tempo total para maratonar a série " + serie1.getNome() + ": " + calculadoraSerie.getTempoTotal() + " minutos.");
+        System.out.println(String.format("""
+            
+            Tempo total para maratonar os filmes do Harry Potter: %s minutos.
+            Tempo total para maratonar a série %s : %s minutos.
+            """, calculadora.getTempoTotal(),serie1.getNome(), calculadoraSerie.getTempoTotal()));
+
+        FiltroRecomendacao filtro = new FiltroRecomendacao();
+        filtro.filtra(filme2);
+
+        Episodio episodio = new Episodio();
+        episodio.setNumero(1);
+        episodio.setSerie(serie1);
+        episodio.setTotalVisualizacoes(350);
+        filtro.filtra(episodio);
     }
 }
