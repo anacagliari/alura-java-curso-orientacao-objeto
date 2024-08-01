@@ -5,6 +5,7 @@ package br.com.orientacaoobjeto.desafio;
 public class Desafio4TabuadaMultiplicacao implements Desafio4Tabuada {
     @Override
     public void mostrarTabuada(int numero) {
+        System.out.println("");
         System.out.println("Tabuada de multiplicação do " + numero + ":");
         for (int i = 1; i <= 10; i++) {
             int resultado = numero * i;
