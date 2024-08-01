@@ -1,7 +1,19 @@
+import br.com.orientacaoobjeto.calculo.CalculadoraDeTempo;
 import br.com.orientacaoobjeto.modelo.Filme;
+import br.com.orientacaoobjeto.modelo.Serie;
 
 public class Main {
     public static void main(String[] args) {
+        Serie serie1 = new Serie();
+        serie1.setNome("The Big Bang Theory");
+        serie1.setAnoDeLancamento(2007);
+        serie1.setAtiva(false);
+        serie1.exibeFichaTecnica();
+        serie1.setTemporadas(12);
+        serie1.setEpisodiosPorTemporada(22);
+        serie1.setMinutosPorEpisodio(25);
+        System.out.println("Duração para maratonar " + serie1.getNome() + ": " + serie1.getDuracaoEmMinutos());
+
         Filme filme1 = new Filme();
         filme1.setNome("Harry Potter e a Pedra Filosofal [1]");
         filme1.setAnoDeLancamento(2001);
@@ -82,5 +94,20 @@ public class Main {
         System.out.println("Quantidade de avaliações: " + filme8.getTotalNotas());
         System.out.println("Nota: " + filme8.calculaMediaNotas());
 
+        CalculadoraDeTempo calculadora = new CalculadoraDeTempo();
+        calculadora.inclui(filme1);
+        calculadora.inclui(filme2);
+        calculadora.inclui(filme3);
+        calculadora.inclui(filme4);
+        calculadora.inclui(filme5);
+        calculadora.inclui(filme6);
+        calculadora.inclui(filme7);
+        calculadora.inclui(filme8);
+
+        CalculadoraDeTempo calculadoraSerie = new CalculadoraDeTempo();
+        calculadoraSerie.inclui(serie1);
+
+        System.out.println("Tempo total para maratonar os filmes do Harry Potter: " + calculadora.getTempoTotal() + " minutos.");
+        System.out.println("Tempo total para maratonar a série " + serie1.getNome() + ": " + calculadoraSerie.getTempoTotal() + " minutos.");
     }
 }

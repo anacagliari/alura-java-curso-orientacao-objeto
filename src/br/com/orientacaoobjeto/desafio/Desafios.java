@@ -1,7 +1,7 @@
 package br.com.orientacaoobjeto.desafio;
 public class Desafios {
     public static void main(String[] args) {
-        // desafios 1.
+// desafios 1.
         // Crie uma classe Pessoa com um método que exibe "Olá, mundo!" no console.
         Desafio1Pessoa pessoa = new Desafio1Pessoa();
         pessoa.exibeOla();
@@ -37,7 +37,7 @@ public class Desafios {
         aluno.nome = "Ana Cagliari";
         aluno.exibeFichaTecnica();
 
-        //desafio 2.
+// desafios 2.
         // Crie uma classe ContaBancaria com os seguintes atributos: numeroConta (privado), saldo (privado) e titular (publico). 
         // Implemente métodos getters e setters para os atributos privados.
         Desafio2ContaBancaria conta = new Desafio2ContaBancaria();
@@ -105,5 +105,51 @@ public class Desafios {
         System.out.println("");
         livro1.exibirDetalhes();
         livro2.exibirDetalhes();
+
+// desafios 3.
+        // Crie uma classe Carro com métodos para representar um modelo específico ao longo de três anos. 
+        // Implemente métodos para definir o nome do modelo, os preços médios para cada ano, e calcular e exibir o menor e o maior preço. 
+        // Adicione uma subclasse ModeloCarro para criar instâncias específicas, utilizando-a na classe principal para definir preços e mostrar informações.
+        Desafio3ModeloCarro meuCarro = new Desafio3ModeloCarro();
+        meuCarro.definirModelo("Sedan");
+        meuCarro.definirPrecos(30000, 32000, 35000);
+        meuCarro.exibirFichaCarros();
+
+        // Crie uma classe Animal com um método emitirSom(). Em seguida, crie duas subclasses: Cachorro e Gato, que herdam da classe Animal. 
+        // Adicione o método emitirSom() nas subclasses, utilizando a anotação @Override para indicar que estão sobrescrevendo o método. 
+        // Além disso, adicione métodos específicos para cada subclasse, como abanarRabo() para o Cachorro e arranharMoveis() para o Gato.
+        System.out.println("");
+        Desafio3Cachorro cachorro = new Desafio3Cachorro();
+        System.out.println("Som: " + cachorro.emitirSom() + " - Gesto: " +  cachorro.abanarRabo());
+
+        Desafio3Gato gato = new Desafio3Gato();
+        System.out.println("Som: " + gato.emitirSom() + " - Gesto: " +  gato.arranharMoveis());
+
+        // Crie uma classe ContaBancaria com métodos para realizar operações bancárias como depositar(), sacar() e consultarSaldo(). 
+        // Em seguida, crie uma subclasse ContaCorrente que herda da classe ContaBancaria. Adicione um método específico para a subclasse, 
+        // como cobrarTarifaMensal(), que desconta uma tarifa mensal da conta corrente.
+        System.out.println("");
+        Desafio3ContaCorrente contaCorrente = new Desafio3ContaCorrente();
+        contaCorrente.depositar(1000);
+        contaCorrente.cobrarTarifaMensal();
+        contaCorrente.consultarSaldo();
+        contaCorrente.sacar(150);
+        contaCorrente.consultarSaldo();
+
+        // Crie uma classe NumerosPrimos com métodos como verificarPrimalidade() e listarPrimos(). Em seguida, crie duas subclasses, 
+        // VerificadorPrimo e GeradorPrimo, que herdam da classe NumerosPrimos. Adicione um método específico para cada uma das subclasses, 
+        // como verificarSeEhPrimo() para o VerificadorPrimo e gerarProximoPrimo() para o GeradorPrimo.
+        System.out.println("");
+        Desafio3VerificadorPrimo verificador = new Desafio3VerificadorPrimo();
+        verificador.verificarSeEhPrimo(19);
+        verificador.verificarSeEhPrimo(22);
+
+        Desafio3GeradorPrimo gerador = new Desafio3GeradorPrimo();
+        int numeroPrimo = 11;
+        int proximoPrimo = gerador.gerarProximoPrimo(numeroPrimo);
+        System.out.println("O Número Primo após o número " + numeroPrimo+ " é: " + proximoPrimo);
+
+        Desafio3NumerosPrimos numerosPrimos = new Desafio3NumerosPrimos();
+        numerosPrimos.listarPrimos(50);
     }
 }
